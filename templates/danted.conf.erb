@@ -1,0 +1,18 @@
+logoutput: stderr
+internal: <%= @internal_iface %> port = <%= @socks_port %>
+external: <%= @external_iface %>
+clientmethod: none
+method: none
+user.privileged: proxy
+user.notprivileged: nobody
+user.libwrap: nobody
+client pass {
+	from: <%= @client_range %> to: <%= @target_range %>
+}
+block {
+	from: 0.0.0.0/0 to: 127.0.0.0/8
+	log: connect error
+}
+pass {
+	from: <%= @client_range %> to: <%= @target_range %>
+}

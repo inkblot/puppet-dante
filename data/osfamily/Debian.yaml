@@ -1,0 +1,3 @@
+---
+dante::dante_package: 'dante-server'
+dante::dante_service: 'danted'

@@ -1,0 +1,2 @@
+#!/bin/sh
+[ -f /var/run/danted.pid ] && pgrep danted | grep `cat /var/run/danted.pid` > /dev/null
