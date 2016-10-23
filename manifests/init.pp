@@ -33,6 +33,7 @@ class dante (
 
     service { $dante_service:
         ensure    => running,
+        provider  => debian,
         hasstatus => false,
         status    => '/usr/local/bin/dante-server-status',
         subscribe => File['/etc/danted.conf'],
